@@ -37,156 +37,161 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox prefHeight="647.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="WordleController">
-  <children>
-      <AnchorPane prefHeight="416.0" prefWidth="640.0">
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="655.0" prefWidth="640.0" style="-fx-background-color: #27e8d2;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox layoutX="10.0" layoutY="10.0" prefHeight="647.0" prefWidth="640.0">
          <children>
-            <VBox fx:id="mainVBox" layoutX="135.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="396.0" />
+            <AnchorPane prefHeight="416.0" prefWidth="640.0">
+               <children>
+                  <VBox fx:id="mainVBox" layoutX="135.0" layoutY="47.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="396.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="200.0" prefWidth="613.0">
+               <children>
+                  <Button contentDisplay="CENTER" layoutX="266.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="T" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="205.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="R" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="143.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="E" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="81.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="W" textAlignment="CENTER">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="451.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="I" textAlignment="CENTER">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="389.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="U" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="327.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Y" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="19.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Q" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="512.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="O" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="301.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="G" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="240.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="F" textAlignment="CENTER">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="178.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="D" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="116.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="S" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="486.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="K" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="424.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="J" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="362.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="H" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="54.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="A" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="547.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="L" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="361.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="B" textAlignment="CENTER">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="300.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="V" textAlignment="CENTER">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="238.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="C" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="176.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="X" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="484.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="M" textAlignment="CENTER">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="422.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="N" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="114.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Z" textAlignment="CENTER">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="556.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="P" textAlignment="CENTER" translateX="16.0">
+                     <font>
+                        <Font size="23.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="545.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="⌫" textAlignment="CENTER">
+                     <font>
+                        <Font size="21.0" />
+                     </font>
+                  </Button>
+                  <Button contentDisplay="CENTER" layoutX="21.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="81.0" text="ENTER" textAlignment="CENTER">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
          </children>
-      </AnchorPane>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0">
-         <children>
-            <Button contentDisplay="CENTER" layoutX="266.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="T" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="205.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="R" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="143.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="E" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="81.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="W" textAlignment="CENTER">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="451.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="I" textAlignment="CENTER">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="389.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="U" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="327.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Y" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="19.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Q" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="512.0" layoutY="14.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="O" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="301.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="G" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="240.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="F" textAlignment="CENTER">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="178.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="D" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="116.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="S" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="486.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="K" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="424.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="J" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="362.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="H" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="54.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="A" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="547.0" layoutY="75.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="L" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="361.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="B" textAlignment="CENTER">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="300.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="V" textAlignment="CENTER">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="238.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="C" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="176.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="X" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="484.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="M" textAlignment="CENTER">
-               <font>
-                  <Font size="22.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="422.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="N" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="114.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="Z" textAlignment="CENTER">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="556.0" layoutY="15.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="P" textAlignment="CENTER" translateX="16.0">
-               <font>
-                  <Font size="23.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="545.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="75.0" text="⌫" textAlignment="CENTER">
-               <font>
-                  <Font size="21.0" />
-               </font>
-            </Button>
-            <Button contentDisplay="CENTER" layoutX="21.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="81.0" text="ENTER" textAlignment="CENTER">
-               <font>
-                  <Font size="19.0" />
-               </font>
-            </Button>
-         </children>
-      </AnchorPane>
-  </children>
-</VBox>
+      </VBox>
+   </children>
+</AnchorPane>

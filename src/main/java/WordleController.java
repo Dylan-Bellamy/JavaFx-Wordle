@@ -2,15 +2,18 @@ import java.net.URL;
 //import java.util.Random;
 import java.util.ResourceBundle;
 
+import javafx.event.ActionEvent;
 //import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.scene.text.Font;
 
 public class WordleController implements Initializable {
     
@@ -42,9 +45,10 @@ public class WordleController implements Initializable {
     HBox horzBox4 = new HBox(5);
     HBox horzBox5 = new HBox(5);
     HBox horzBox6 = new HBox(5);
+    StackPane[][] stackPane = new StackPane[6][5];
 
     @FXML
-    private TextField a1,a2;
+    private Label[][] label = new Label[6][5];
 
    //String in = "";
     
@@ -56,30 +60,38 @@ public class WordleController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         mainVBox.setSpacing(5);
-        for(int i=0; i<6;i++){ // a,b,c,d,e (Rows)
+        for(int i=0; i<6;i++){ // a,b,c,d,e,f (Columns)
             
-            for(int j=0; j<5; j++){ // 1,2,3,4,5 (Columns)
+            for(int j=0; j<5; j++){ // 1,2,3,4,5 (Rows)
                 
+                stackPane[i][j] = new StackPane();
+
                 Rectangle[][] rect = new Rectangle[6][5];
-                rect[i][j] = new Rectangle(70,70);    
+                rect[i][j] = new Rectangle(70,70); 
+
+                label[i][j] = new Label("");
+                label[i][j].setFont(new Font("Helvetica",40));
+
+                stackPane[i][j].getChildren().add(rect[i][j]);
+                stackPane[i][j].getChildren().add(label[i][j]);
 
                 if (i == 0){
-                    horzBox1.getChildren().add(rect[i][j]);
+                    horzBox1.getChildren().add(stackPane[i][j]);
                 }
                 if (i == 1){
-                    horzBox2.getChildren().add(rect[i][j]);
+                    horzBox2.getChildren().add(stackPane[i][j]);
                 }
                 if (i == 2){
-                    horzBox3.getChildren().add(rect[i][j]);
+                    horzBox3.getChildren().add(stackPane[i][j]);
                 }
                 if (i == 3){
-                    horzBox4.getChildren().add(rect[i][j]);
+                    horzBox4.getChildren().add(stackPane[i][j]);
                 }
                 if (i == 4){
-                    horzBox5.getChildren().add(rect[i][j]);
+                    horzBox5.getChildren().add(stackPane[i][j]);
                 }
                 if (i == 5){
-                    horzBox6.getChildren().add(rect[i][j]);
+                    horzBox6.getChildren().add(stackPane[i][j]);
                 }
              }
         }
@@ -92,16 +104,16 @@ public class WordleController implements Initializable {
         mainVBox.getChildren().add(horzBox6);
         
     }
-    // @FXML
-    // void buttonQClicked(ActionEvent event) {
-    //     addString("Q");
-    // }
-    // public void updateTextField(){
-    //     textField.setText();
-    // }
-    // public void addString(String number){
-    //     updateTextField();
-    // }
+    @FXML
+    void buttonQClicked(ActionEvent event) {
+        addChar("Q");
+    }
+    public void updateLabel(){
+        label[0][0].setText(null);
+    }
+    public void addChar(String string){
+        updateLabel();
+    }
     
 }
     
