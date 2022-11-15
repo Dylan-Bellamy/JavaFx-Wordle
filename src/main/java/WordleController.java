@@ -3,12 +3,10 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
-//import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -38,7 +36,7 @@ public class WordleController implements Initializable {
     @FXML 
     VBox mainVBox;
     
-    @FXML
+    
     HBox horzBox1 = new HBox(5);
     HBox horzBox2 = new HBox(5);
     HBox horzBox3 = new HBox(5);
@@ -46,16 +44,13 @@ public class WordleController implements Initializable {
     HBox horzBox5 = new HBox(5);
     HBox horzBox6 = new HBox(5);
     StackPane[][] stackPane = new StackPane[6][5];
-
-    @FXML
+    Button tempButton;
+    
     private Label[][] label = new Label[6][5];
-
+    int column;
    //String in = "";
     
-    @FXML
-    private AnchorPane wordPane;
-    @FXML
-    private AnchorPane buttonPane;
+    
       
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -69,11 +64,11 @@ public class WordleController implements Initializable {
                 Rectangle[][] rect = new Rectangle[6][5];
                 rect[i][j] = new Rectangle(70,70); 
 
-                label[i][j] = new Label("");
+                label[i][j] = new Label();
                 label[i][j].setFont(new Font("Helvetica",40));
 
-                stackPane[i][j].getChildren().add(rect[i][j]);
-                stackPane[i][j].getChildren().add(label[i][j]);
+                stackPane[i][j].getChildren().addAll(rect[i][j],label[i][j]);
+                
 
                 if (i == 0){
                     horzBox1.getChildren().add(stackPane[i][j]);
@@ -105,14 +100,22 @@ public class WordleController implements Initializable {
         
     }
     @FXML
-    void buttonQClicked(ActionEvent event) {
-        addChar("Q");
+    void buttonClicked(ActionEvent ae) { 
+        
+       // for(int i=0; i<6;i++){
+        Button tempButton = (Button)(ae.getSource());
+        System.out.println(tempButton.getText());
+       // }
     }
-    public void updateLabel(){
-        label[0][0].setText(null);
-    }
-    public void addChar(String string){
-        updateLabel();
+
+    private void output(String input){
+        for(int i=0; i<6;i++){
+            label[column][i] = (tempButton.getText());
+            
+            
+            
+        }
+        column++;
     }
     
 }
