@@ -10,6 +10,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 
@@ -36,86 +37,64 @@ public class WordleController implements Initializable {
     @FXML 
     VBox mainVBox;
     
-    
-    HBox horzBox1 = new HBox(5);
-    HBox horzBox2 = new HBox(5);
-    HBox horzBox3 = new HBox(5);
-    HBox horzBox4 = new HBox(5);
-    HBox horzBox5 = new HBox(5);
-    HBox horzBox6 = new HBox(5);
+    HBox[] horzBox = new HBox[6];
     StackPane[][] stackPane = new StackPane[6][5];
-    Button tempButton;
+    int pressed = 0;
     
+    Rectangle[][] rect = new Rectangle[6][5];
+
     private Label[][] label = new Label[6][5];
     int column;
-   //String in = "";
     
-    
+    String answer = "Abuse";
       
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         mainVBox.setSpacing(5);
         for(int i=0; i<6;i++){ // a,b,c,d,e,f (Columns)
-            
+
+            horzBox[i] = new HBox(5);
+
             for(int j=0; j<5; j++){ // 1,2,3,4,5 (Rows)
                 
                 stackPane[i][j] = new StackPane();
 
-                Rectangle[][] rect = new Rectangle[6][5];
+            
                 rect[i][j] = new Rectangle(70,70); 
+                rect[i][j].setFill(Color.GHOSTWHITE);
 
                 label[i][j] = new Label();
                 label[i][j].setFont(new Font("Helvetica",40));
 
                 stackPane[i][j].getChildren().addAll(rect[i][j],label[i][j]);
+                horzBox[i].getChildren().add(stackPane[i][j]);
                 
-
-                if (i == 0){
-                    horzBox1.getChildren().add(stackPane[i][j]);
-                }
-                if (i == 1){
-                    horzBox2.getChildren().add(stackPane[i][j]);
-                }
-                if (i == 2){
-                    horzBox3.getChildren().add(stackPane[i][j]);
-                }
-                if (i == 3){
-                    horzBox4.getChildren().add(stackPane[i][j]);
-                }
-                if (i == 4){
-                    horzBox5.getChildren().add(stackPane[i][j]);
-                }
-                if (i == 5){
-                    horzBox6.getChildren().add(stackPane[i][j]);
-                }
+                
+                mainVBox.getChildren().add(horzBox[i]);
              }
         }
-
-        mainVBox.getChildren().add(horzBox1);
-        mainVBox.getChildren().add(horzBox2);
-        mainVBox.getChildren().add(horzBox3);
-        mainVBox.getChildren().add(horzBox4);
-        mainVBox.getChildren().add(horzBox5);
-        mainVBox.getChildren().add(horzBox6);
-        
     }
+
     @FXML
-    void buttonClicked(ActionEvent ae) { 
+    void buttonClicked(ActionEvent ae) throws InterruptedException { 
         
-       // for(int i=0; i<6;i++){
+       
         Button tempButton = (Button)(ae.getSource());
         System.out.println(tempButton.getText());
-       // }
+
+        label[column][pressed].setText((tempButton.getText()));  
+        pressed++;
+        
+        if(pressed == 5 & tempButton.getText() == "Enter"){
+            if()
+            
+            pressed = 0;
+            column++;  
+        }
     }
 
     private void output(String input){
-        for(int i=0; i<6;i++){
-            label[column][i] = (tempButton.getText());
-            
-            
-            
-        }
-        column++;
+      
     }
     
 }

@@ -183,7 +183,7 @@
                         <Font size="21.0" />
                      </font>
                   </Button>
-                  <Button contentDisplay="CENTER" layoutX="21.0" layoutY="136.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="81.0" text="ENTER" textAlignment="CENTER">
+                  <Button contentDisplay="CENTER" layoutX="21.0" layoutY="136.0" mnemonicParsing="false" onAction="#buttonClicked" prefHeight="50.0" prefWidth="81.0" text="ENTER" textAlignment="CENTER">
                      <font>
                         <Font size="19.0" />
                      </font>
