@@ -14,7 +14,7 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 
-public class WordleController implements Initializable {
+public class WordleController implements Initializable{
     
     String[] words = {"Abuse","Adult","Agent","Anger","Apple","Award","Basis","Beach","Birth","Block","Blood","Board",
     "Brain","Bread","Break","Brown","Buyer","Cause","Chain","Chair","Chest","Chief","Child","China","Claim","Class",
@@ -59,7 +59,6 @@ public class WordleController implements Initializable {
                 
                 stackPane[i][j] = new StackPane();
 
-            
                 rect[i][j] = new Rectangle(70,70); 
                 rect[i][j].setFill(Color.GHOSTWHITE);
 
@@ -69,33 +68,56 @@ public class WordleController implements Initializable {
                 stackPane[i][j].getChildren().addAll(rect[i][j],label[i][j]);
                 horzBox[i].getChildren().add(stackPane[i][j]);
                 
-                
-                mainVBox.getChildren().add(horzBox[i]);
              }
+        mainVBox.getChildren().add(horzBox[i]);
         }
     }
 
     @FXML
-    void buttonClicked(ActionEvent ae) throws InterruptedException { 
+    void buttonClicked(ActionEvent ae) { 
         
-       
         Button tempButton = (Button)(ae.getSource());
         System.out.println(tempButton.getText());
 
+        if (pressed < 5){
         label[column][pressed].setText((tempButton.getText()));  
         pressed++;
-        
-        if(pressed == 5 & tempButton.getText() == "Enter"){
-            if()
-            
-            pressed = 0;
-            column++;  
+        }
+        // System.out.println("pass");
+        if(pressed >= 5){
+            for(int i=0; i<5;i++){
+                
+                if(answer.toUpperCase() .charAt(i) != label[column][i].getText().charAt(0)){
+                    rect[column][i].setFill(Color.LIGHTGREY);
+                }
+                if(answer.toUpperCase() .charAt(i) == label[column][0].getText().charAt(0)){
+                    rect[column][0].setFill(Color.YELLOW);
+                }
+                if(answer.toUpperCase() .charAt(i) == label[column][1].getText().charAt(0)){
+                    rect[column][1].setFill(Color.YELLOW);
+                }
+                if(answer.toUpperCase() .charAt(i) == label[column][2].getText().charAt(0)){
+                    rect[column][2].setFill(Color.YELLOW);
+                }
+                if(answer.toUpperCase() .charAt(i) == label[column][3].getText().charAt(0)){
+                    rect[column][3].setFill(Color.YELLOW);
+                }
+                if(answer.toUpperCase() .charAt(i) == label[column][4].getText().charAt(0)){
+                    rect[column][4].setFill(Color.YELLOW);
+                }
+                if(answer.toUpperCase().charAt(i) == label[column][i].getText().charAt(0)){
+                    rect[column][i].setFill(Color.GREEN);
+                }
+            }
+        pressed = 0;
+        column++; 
         }
     }
-
-    private void output(String input){
-      
-    }
-    
 }
+
+    // private void output(String input){
+      
+    // }
+    
+
     
