@@ -78,13 +78,25 @@ public class WordleController implements Initializable{
         
         Button tempButton = (Button)(ae.getSource());
         System.out.println(tempButton.getText());
-
-        if (pressed < 5){
-        label[column][pressed].setText((tempButton.getText()));  
-        pressed++;
+        System.out.println((Button)(ae.getSource()));
+        if(!tempButton.getText().equals("ENTER")){ //|| (!tempButton.getText().equals(""))){
+            label[column][pressed].setText((tempButton.getText()));  
         }
-        // System.out.println("pass");
-        if(pressed >= 5){
+        // System.out.println(tempButton.getText().equals("⌫"));
+        // if(tempButton.getText().equals("⌫")){
+        //     if(pressed >= 1){
+        //     pressed--;
+        //     label[column][pressed].setText("");
+        //     }
+        //}
+        else pressed--;
+
+        pressed++;
+        if (pressed >= 5)
+            pressed = 4;
+        
+        System.out.println(pressed);
+        if(pressed >= 4 && tempButton.getText().equals("ENTER")){ 
             for(int i=0; i<5;i++){
                 
                 if(answer.toUpperCase().charAt(i) == label[column][0].getText().charAt(0)){
@@ -109,8 +121,13 @@ public class WordleController implements Initializable{
                     rect[column][i].setFill(Color.LIGHTGREY);
                 }
             }
+        if("TODO"){
+
+        }
+        else{
         pressed = 0;
         column++; 
+        }
         }
     }
 }
