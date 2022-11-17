@@ -87,26 +87,26 @@ public class WordleController implements Initializable{
         if(pressed >= 5){
             for(int i=0; i<5;i++){
                 
-                if(answer.toUpperCase() .charAt(i) != label[column][i].getText().charAt(0)){
-                    rect[column][i].setFill(Color.LIGHTGREY);
-                }
-                if(answer.toUpperCase() .charAt(i) == label[column][0].getText().charAt(0)){
+                if(answer.toUpperCase().charAt(i) == label[column][0].getText().charAt(0)){
                     rect[column][0].setFill(Color.YELLOW);
                 }
-                if(answer.toUpperCase() .charAt(i) == label[column][1].getText().charAt(0)){
+                if(answer.toUpperCase().charAt(i) == label[column][1].getText().charAt(0)){
                     rect[column][1].setFill(Color.YELLOW);
                 }
-                if(answer.toUpperCase() .charAt(i) == label[column][2].getText().charAt(0)){
+                if(answer.toUpperCase().charAt(i) == label[column][2].getText().charAt(0)){
                     rect[column][2].setFill(Color.YELLOW);
                 }
-                if(answer.toUpperCase() .charAt(i) == label[column][3].getText().charAt(0)){
+                if(answer.toUpperCase().charAt(i) == label[column][3].getText().charAt(0)){
                     rect[column][3].setFill(Color.YELLOW);
                 }
-                if(answer.toUpperCase() .charAt(i) == label[column][4].getText().charAt(0)){
+                if(answer.toUpperCase().charAt(i) == label[column][4].getText().charAt(0)){
                     rect[column][4].setFill(Color.YELLOW);
                 }
                 if(answer.toUpperCase().charAt(i) == label[column][i].getText().charAt(0)){
                     rect[column][i].setFill(Color.GREEN);
+                }
+                if(rect[column][i].getFill() == Color.GHOSTWHITE){
+                    rect[column][i].setFill(Color.LIGHTGREY);
                 }
             }
         pressed = 0;
