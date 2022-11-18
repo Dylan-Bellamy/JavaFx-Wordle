@@ -5,8 +5,10 @@ import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -39,17 +41,25 @@ public class WordleController implements Initializable{
     
     HBox[] horzBox = new HBox[6];
     StackPane[][] stackPane = new StackPane[6][5];
+
     int pressed = 0;
-    
+    int correct = 0;
+    int column;
+
     Rectangle[][] rect = new Rectangle[6][5];
+    Button reset = new Button("Play Again");
+    Label win = new Label("You Won On Your "+column+"th Try");
 
     private Label[][] label = new Label[6][5];
-    int column;
     
     String answer = "Abuse";
+    @FXML
+    VBox anchor;
       
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        correct = 0;
+        pressed = 0;
         mainVBox.setSpacing(5);
         for(int i=0; i<6;i++){ // a,b,c,d,e,f (Columns)
 
@@ -72,13 +82,27 @@ public class WordleController implements Initializable{
         mainVBox.getChildren().add(horzBox[i]);
         }
     }
+    
+    private void winScreen(){
+        win.setFont(new Font("Helvetica",20));
+        reset.setPrefSize(120,40);
+        anchor.setAlignment(Pos.CENTER);
+        anchor.setSpacing(10);
+        anchor.getChildren().addAll(win,reset);
+        reset.setOnAction(this::resetClicked);
+    }
+    private void resetClicked(ActionEvent ae){
+        mainVBox.getChildren().clear();
+        anchor.getChildren().removeAll(reset,win);
+        initialize(null, null);
+    }
 
     @FXML
     void buttonClicked(ActionEvent ae) { 
         
         Button tempButton = (Button)(ae.getSource());
-        System.out.println(tempButton.getText());
-        System.out.println((Button)(ae.getSource()));
+        // System.out.println(tempButton.getText());
+        // System.out.println((Button)(ae.getSource()));
         if(!tempButton.getText().equals("ENTER")){ //|| (!tempButton.getText().equals(""))){
             label[column][pressed].setText((tempButton.getText()));  
         }
@@ -95,7 +119,6 @@ public class WordleController implements Initializable{
         if (pressed >= 5)
             pressed = 4;
         
-        System.out.println(pressed);
         if(pressed >= 4 && tempButton.getText().equals("ENTER")){ 
             for(int i=0; i<5;i++){
                 
@@ -116,15 +139,18 @@ public class WordleController implements Initializable{
                 }
                 if(answer.toUpperCase().charAt(i) == label[column][i].getText().charAt(0)){
                     rect[column][i].setFill(Color.GREEN);
+                    correct++;
                 }
                 if(rect[column][i].getFill() == Color.GHOSTWHITE){
                     rect[column][i].setFill(Color.LIGHTGREY);
                 }
             }
-        if("TODO"){
+        if(correct == 5){
+            winScreen();
 
         }
         else{
+        correct = 0;
         pressed = 0;
         column++; 
         }
