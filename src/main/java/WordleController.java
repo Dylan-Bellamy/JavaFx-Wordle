@@ -1,5 +1,5 @@
 import java.net.URL;
-//import java.util.Random;
+import java.util.Random;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
@@ -34,11 +34,10 @@ public class WordleController implements Initializable{
     "Theme","Thing","Title","Total","Touch","Tower","Track","Trade","Train","Trend","Trial","Trust","Truth","Uncle",
     "Union","Unity","Value","Video","Visit","Voice","Waste","Watch","Water","While","White","Whole","Woman","World",
     "Youth"};
-   
+    Random rand = new Random();
     
     @FXML 
     VBox mainVBox;
-    
     HBox[] horzBox = new HBox[6];
     StackPane[][] stackPane = new StackPane[6][5];
 
@@ -52,7 +51,7 @@ public class WordleController implements Initializable{
 
     private Label[][] label = new Label[6][5];
     
-    String answer = "Abuse";
+    String answer = "";
     @FXML
     VBox anchor;
       
@@ -60,6 +59,7 @@ public class WordleController implements Initializable{
     public void initialize(URL location, ResourceBundle resources) {
         correct = 0;
         pressed = 0;
+        answer = words[rand.nextInt(words.length)];
         mainVBox.setSpacing(5);
         for(int i=0; i<6;i++){ // a,b,c,d,e,f (Columns)
 
@@ -103,7 +103,7 @@ public class WordleController implements Initializable{
         Button tempButton = (Button)(ae.getSource());
         // System.out.println(tempButton.getText());
         // System.out.println((Button)(ae.getSource()));
-        if(!tempButton.getText().equals("ENTER")){ //|| (!tempButton.getText().equals(""))){
+        if(!tempButton.getText().equals("ENTER")){ //|| (!tempButton.getText().equals("⌫"))){
             label[column][pressed].setText((tempButton.getText()));  
         }
         // System.out.println(tempButton.getText().equals("⌫"));
@@ -147,7 +147,6 @@ public class WordleController implements Initializable{
             }
         if(correct == 5){
             winScreen();
-
         }
         else{
         correct = 0;
