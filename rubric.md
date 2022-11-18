@@ -5,16 +5,22 @@
 
 ## Mini Reflection
 
-Name: <insert your name>
+Name: <Dylan Bellamy>
 
-I think my program is a level <XXXX> because .... <complete this>
+I think my program is a level <4+> because my code is effective and efficient 
+becuase of the use of arrays, dimensional arrays, & for loops making it less code 
+than if-then statements. It's also a level 4+ because of the added features such as a keyboard
+made from buttons, restart buttons, and win & lose screens. Lastly I believe it a level
+4+ because it's aesthetically appealing.
 
 The extra features I included in my program are: 
 
-<briefly describe your features in dot-jot form>
-
-
-
+  - Keyboard (Made from buttons)
+  - Enter Key
+  - Backspace Key
+  - Win Screen
+  - Lose Screen
+  - Restart Button
 
 ## The Program [KAT]
 ### Level 3 Requirements
