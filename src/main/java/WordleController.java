@@ -72,7 +72,7 @@ public class WordleController implements Initializable{
 
         // Randomizes The Answer //
         answer = words[rand.nextInt(words.length)];
-
+        System.out.println(answer);
         mainVBox.setSpacing(5); // Sets the spacing of the already existing VBox
         for(int i=0; i<6;i++){ // (Columns)
 
